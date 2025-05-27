@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "▶️ Run login.spec.ts on Chromium & Firefox",
+      "configurations": ["Run on Chromium", "Run on Firefox"]
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Run on Chromium",
+      "type": "pwa-node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "program": "playwright",
+      "args": [
+        "test",
+        "tests/login.spec.ts",
+        "--project=chromium",
+        "--headed"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run on Firefox",
+      "type": "pwa-node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "program": "playwright",
+      "args": [
+        "test",
+        "tests/login.spec.ts",
+        "--project=firefox",
+        "--headed"
+      ],
+      "console": "integratedTerminal"
+    }
+  ]
+}
